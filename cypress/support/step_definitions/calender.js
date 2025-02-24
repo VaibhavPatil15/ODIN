@@ -1,7 +1,7 @@
 // import data from '../../fixtures/testData.json'; // Correct the import path to reference the commands file
 // const { Given, Before } = require('@badeball/cypress-cucumber-preprocessor');
 
-// // Utility function to get the current date in YYYY-MM-DDThh:mm format
+ Utility function to get the current date in YYYY-MM-DDThh:mm format
 // function getCurrentDateTime() {
 //   const today = new Date();
 //   const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
