@@ -1,0 +1,33 @@
+{
+  "name": "ui_cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "generate-report": "npx multiple-cucumber-html-reporter --reportName \"Cypress Cucumber Report\" --jsonDir=cypress/cucumber-json --reportPath=cypress/reports"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/register": "^7.25.9",
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "cypress": "^14.0.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^2.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "multiple-cucumber-html-reporter": "^3.9.0"
+  },
+  "dependencies": {
+    "cache": "^3.0.0",
+    "clear": "^0.1.0",
+    "cors": "^2.8.5"
+  }
+}

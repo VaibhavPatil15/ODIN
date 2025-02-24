@@ -1,0 +1,44 @@
+***************************************    In package.json **********************************************
+set test : "npx cypress run"         
+------> To run cypress in Headless mode.
+------> typically used in Continuous Integration (CI) environments or when you want to run the tests without a graphical user interface (GUI).
+------> The tests run automatically, and the results are displayed in the terminal.
+
+
+***************************************    In cypress.config.js  ***************************************  
+    video: true,
+      ------> Video recoding for each feature file execution
+    defaultCommandTimeout: 60000,
+      -------> Sets the default command timeout to 60 seconds waits for the element to appear ( global command )
+  retries: {
+      runMode: 2,  
+      ------> Number of retries when running tests in `cypress run` .
+      ------>  This specifies the number of retries when running tests in Headless mode using the cypress run command. 
+      ------>  In this case, it is set to 2, meaning that if a test fails, Cypress will retry it up to 2 additional times before considering it a failure.
+        
+      openMode: 1,
+      ------> Number of retries when running tests in `cypress open`
+      ------> This specifies the number of retries when running tests in interactive mode using the cypress open command. 
+      ------> In this case, it is set to 1, meaning that if a test fails, Cypress will retry it 1 additional time before considering it a failure.
+    },
+
+
+ ************************************************** support folder --> e2e.js **********************************
+ <<<<<  cypress-xpath and cypress-iframe are the plugins >>>>>>.
+
+import 'cypress-xpath';
+ -----> imports the cypress-xpath plugin, adds support for XPath selectors .
+ -----> Cypress only supports CSS selectors. The cypress-xpath plugin allows you to use XPath expressions to locate elements in your tests.
+ -----> you can use the cy.xpath() command to select elements using XPath .
+ 
+ e.g          cy.xpath('//button[@id="btn1"]').click();
+
+import 'cypress-iframe';
+-----> imports the cypress-iframe plugin, provides commands to work with iframes.
+-----> cypress-iframe plugin simplifies iframe selection by providing commands like cy.frameLoaded() and cy.iframe().
+-----> these commands helps to interact with elements inside iframes.
+
+e.g           cy.frameLoaded('#iframeID'); // Wait for the iframe to load
+              cy.iframe().find('button#btn1').click(); // Interact with elements inside the iframe
+
+
